@@ -4,7 +4,8 @@ $conn = mysqli_connect('localhost','c26giambanco','xv3!3wHV','c26Training_Me');
 if (!$conn) {
     die("Connessione fallita: " . mysqli_connect_error());
 }
-
+//$nome_inserito = filter_input(INPUT_POST,$_POST['username'], FILTER_SANITIZE_STRING);
+//$password_inserita = filter_input(INPUT_POST,$_POST['password'], FILTER_SANITIZE_STRING);
 $nome_inserito = $_POST['username'];
 $password_inserita = $_POST['password'];
 if (strlen($password_inserita) < 8) {
