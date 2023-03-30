@@ -1,0 +1,26 @@
+{
+	"uploadOnSave": true,
+	"autoDelete": true,
+	"checkGitignore": false,
+	"activeTargets": [
+		"My FTP"
+	],
+	"concurrency": 5,
+	"ignore": [
+		".git/**/*",
+		".vscode/**/*"
+	],
+	"targets": [
+		{
+			"name": "My FTP",
+			"type": "ftp",
+			"host": "giambanco.bearzi.info",
+			"port": 21,
+			"user": "giambancoandrea",
+			"password": "Giambanco12",
+			"dir": "/web/Secondo_progetto_php",
+			"transferDataType": "binary"
+		}
+		
+	]
+}

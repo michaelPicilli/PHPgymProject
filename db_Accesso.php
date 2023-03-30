@@ -5,9 +5,8 @@ if (!$conn) {
     die("Connessione fallita: " . mysqli_connect_error());
 }
 
-$nome_inserito = filter_input(INPUT_POST,$_POST['username'], FILTER_SANITIZE_STRING);
-$password_inserita = filter_input(INPUT_POST,$_POST['password'], FILTER_SANITIZE_STRING);
-
+$nome_inserito = $_POST['username'];
+$password_inserita = $_POST['password'];
 if (strlen($password_inserita) < 8) {
     die("La password deve contenere almeno 8 caratteri");
 }
