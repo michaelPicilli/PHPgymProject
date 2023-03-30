@@ -18,7 +18,7 @@
 			"port": 21,
 			"user": "giambancoandrea",
 			"password": "Giambanco12",
-			"dir": "/web/Secondo_progetto_php",
+			"dir": "/web/Secondo_progetto_php/PHPgymProject",
 			"transferDataType": "binary"
 		}
 		

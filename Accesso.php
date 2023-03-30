@@ -10,7 +10,8 @@
     include 'navbar.html';
     ?>
     <link rel="stylesheet" href="Accessp.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
 </head>
 
@@ -28,21 +29,24 @@
                                     </div>
 
                                     <h6 class="h5 mb-0">Ben Tornato !!</h6>
-                                    <p class="text-muted mt-2 mb-5">Inserisci il nome utente e la password per accedere</p>
+                                    <p class="text-muted mt-2 mb-5">Inserisci il nome utente e la password per accedere
+                                    </p>
 
-                                    <form method="POST" action="db_Accesso.php">
-                                        <div class="form-group">
+                                    <form method="post" action="db_Accesso.php">
+
+                                        <div class="">
                                             <label for="nome_utente">Nome Utente</label>
-                                            <input type="text" class="form-control" id="nome_utente">
+                                            <input type="text" class="form-control" id="nome_utente" name="nome_utente">
                                         </div>
-                                        <div class="form-group mb-5">
+                                        <div class=" mb-5">
                                             <label for="password_utente">Password</label>
-                                            <input type="password" class="form-control" id="password_utente">
+                                            <input type="password" class="form-control" id="id_password_utente"
+                                                name="password_utente">
                                         </div>
-
                                         <button type="submit" class="btn btn-secondary">Login</button>
-                                
+
                                     </form>
+
                                 </div>
                             </div>
 
