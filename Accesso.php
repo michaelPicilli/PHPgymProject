@@ -46,7 +46,7 @@
                                         <button type="submit" class="btn btn-secondary">Login</button>
                                         <div class="">
                                             <p class="text-muted text-center mt-3 mb-0">Non sei già Registrato ?<a
-                                                    href="#" class="btn btn-secondary rounded-pill ms-2">Registrati</a></p>
+                                                    href="Registrazione.php" class="btn btn-secondary rounded-pill ms-2">Registrati</a></p>
                                         </div>
                                     </form>
 
