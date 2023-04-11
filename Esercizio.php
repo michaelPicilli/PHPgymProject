@@ -19,7 +19,7 @@
     <body>
         <h1>ESERCIZO</h1> <!-- TODO: Nome esercizio -->
 
-        <iframe height="500" width="900" src="https://www.youtube.com/embed/DbAuRVxT-F0" title="What Language is Spoken in Italy? and Why We Should Care" frameborder="0" allow="autoplay encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe height="500" width="900" src="" title="" frameborder="0" allow="autoplay encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         
         <h2>
             <?php
@@ -27,7 +27,7 @@
             ?>
         </h2>
 
-        <iframe width="560" height="315" src="" title="Senna 1988" frameborder="0"  
+        <iframe width="560" height="315" src="" title="" frameborder="0"  
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <!-- TODO: Query link dell'esercizio -->
     </body>
 
