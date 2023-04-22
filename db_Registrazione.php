@@ -7,7 +7,8 @@ if (!$conn) {
 
 $nome_inserito = mysqli_real_escape_string($conn, $_POST["nome_utente"]);
 $password_inserita = mysqli_real_escape_string($conn, $_POST["password_utente"]);
-
+$altezza_utente = mysqli_real_escape_string($conn, $_POST["altezza_utente"]);
+$peso_utente = mysqli_real_escape_string($conn, $_POST["peso_utente"]);
 
  //fare in modo che venga scritto nella password della form  
 if (strlen($password_inserita) < 8) {
@@ -16,10 +17,10 @@ if (strlen($password_inserita) < 8) {
 
 $hash_password = password_hash($password_inserita, PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO Utenti (Nome, Password) VALUES ('$nome_inserito','$hash_password')";
+$sql = "INSERT INTO Utenti (Nome, Password,Altezza,Peso) VALUES ('$nome_inserito','$hash_password','$altezza_utente','$peso_utente')";
 
 $result = mysqli_query($conn, $sql);
-echo $conn;
+
 if($result){
     echo "Registrazione avvenuta con successo";
 }else{

@@ -15,26 +15,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-        <link rel="icon" type="image/x-icon" href="icon.png">
 
         <script src="Filtro.js"></script>
         <link rel="stylesheet" href="Style.css">
-        
-        <title>ESERCIZI</title>
-    </head>
-
-    <header>
         <?php
             include 'navbar.html';
         ?>
-    </header>
+        <title>ESERCIZI</title>
+    </head>
+   
 
     <body>
         <h1>ESERCIZI</h1>
         <label class="labelFiltro">Scegli la zona da allenare:</label>
 
-        <form action="" method="post" id="formFiltro" class="filtro">
-            <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true">
+        <form  method="post" id="formFiltro" class="filtro">
+            <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true" class="">
                 <option value="Petto">PETTO</option>
                     <option value="Spalle">SPALLE</option>
                     <option value="Braccia">BRACCIA</option>
@@ -46,7 +42,7 @@
                     <option value="Olympic">OLYMPIC</option>
                 </select>
 
-            <input type="submit" value="INVIA">
+            <input type="submit" value="INVIA" class="btn btn-secondary">
         </form>
         
         <div>
