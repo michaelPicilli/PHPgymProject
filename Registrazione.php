@@ -34,29 +34,29 @@
 
                                         <div>
                                             <label for="nome_utente">Nome Utente</label>
-                                            <input type="text" class="form-control" id="nome_utente" name="nome_utente">
+                                            <input type="text" class="form-control" id="nome_utente" name="nome_utente" required>
+                                        </div>
+                                        <div>
+                                            <label for="cognome_utente">Cognome Utente</label>
+                                            <input type="text" class="form-control" id="cognome_utente" name="cognome_utente" required>
                                         </div>
                                         <div>
                                             <label for="password_utente">Password</label>
                                             <input type="password" class="form-control" id="id_password_utente"
-                                                name="password_utente">
+                                                name="password_utente" required>
                                         </div>
                                         <div>
                                             <label for="peso_utente">Peso Corporeo</label>
                                             <input type="number" class="form-control" name="peso_utente"
-                                                id="peso_utente">
+                                                id="peso_utente" placeholder="Kg" required>
                                         </div>
                                         <div class="mb-5">
                                             <label for="altezza_utente">Altezza</label>
                                             <input type="number" class="form-control" name="altezza_utente"
-                                                id="altezza_utente" placeholder="Kg">
+                                                id="altezza_utente" placeholder="cm" required>
                                         </div>
                                         <button type="submit" class="btn btn-secondary">Login</button>
-                                        <div>
-                                            <p class="text-muted text-center mt-3 mb-0">Non sei già Registrato ?<a
-                                                    href="Registrazione.php"
-                                                    class="btn btn-secondary rounded-pill ms-2">Registrati</a></p>
-                                        </div>
+                                        
 
                                     </form>
 
