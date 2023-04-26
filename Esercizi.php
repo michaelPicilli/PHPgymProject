@@ -30,7 +30,7 @@
         <label class="labelFiltro">Scegli la zona da allenare:</label>
 
         <form  method="post" id="formFiltro" class="filtro">
-            <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true" class="">
+            <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true">
                 <option value="Petto">PETTO</option>
                     <option value="Spalle">SPALLE</option>
                     <option value="Braccia">BRACCIA</option>

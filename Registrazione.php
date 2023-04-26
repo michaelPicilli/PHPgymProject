@@ -41,6 +41,10 @@
                                             <input type="text" class="form-control" id="cognome_utente" name="cognome_utente" required>
                                         </div>
                                         <div>
+                                            <label for="email_utente">Email Utente</label>
+                                            <input type="email" class="form-control" id="email_utente" name="email_utente" required>
+                                        </div>
+                                        <div>
                                             <label for="password_utente">Password</label>
                                             <input type="password" class="form-control" id="id_password_utente"
                                                 name="password_utente" required>
