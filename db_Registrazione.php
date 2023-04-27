@@ -16,6 +16,9 @@ if (strlen($password_inserita) < 8) {
     die("La password deve contenere almeno 8 caratteri");
 }
 
+//$salt = bin2hex(random_bytes(32));
+
+//$password_inserita = $password_inserita.$salt;
 $hash_password = password_hash($password_inserita, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO Utenti (Nome,Cognome,Email,Password,Altezza,Peso) VALUES ('$nome_inserito','$cognome_utente','$email_utente','$hash_password','$altezza_utente','$peso_utente')";

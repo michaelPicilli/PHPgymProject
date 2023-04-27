@@ -36,18 +36,20 @@
 
                                         <div class="">
                                             <label for="email_utente">Email Utente</label>
-                                            <input type="text" class="form-control" id="email_utente" name="email_utente">
+                                            <input type="text" class="form-control" id="email_utente"
+                                                name="email_utente">
                                         </div>
-                                        
+
                                         <div class=" mb-5">
                                             <label for="password_utente">Password</label>
                                             <input type="password" class="form-control" id="id_password_utente"
                                                 name="password_utente">
                                         </div>
-                                        <button type="submit" class="btn btn-secondary">Login</button>
+                                        <button type="submit" class="btn btn-secondary ">Login</button>
                                         <div class="">
                                             <p class="text-muted text-center mt-3 mb-0">Non sei già Registrato ?<a
-                                                    href="Registrazione.php" class="btn btn-secondary rounded-pill ms-2">Registrati</a></p>
+                                                    href="Registrazione.php"
+                                                    class="btn btn-secondary rounded-pill ms-2 ">Registrati</a></p>
                                         </div>
                                     </form>
 

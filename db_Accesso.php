@@ -8,14 +8,14 @@ if (!$conn) {
 $email_utente = mysqli_real_escape_string($conn, $_POST["email_utente"]);
 $password_inserita = mysqli_real_escape_string($conn, $_POST["password_utente"]);
 
+$salt = bin2hex(random_bytes(32));
+$password_inserita = $password_inserita.$salt;
 
 
-$hash_password = password_hash($password_inserita, PASSWORD_DEFAULT);
-
-$sql = "SELECT * FROM Utenti WHERE Email = '$email_utente'";
+$sql = "SELECT * FROM Utenti WHERE Email = '$email_utente' ";
 
 $result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) > 0){
+if(mysqli_num_rows($result) > 0 && password_verify($password_inserita, $hash_password)){
     echo "Accesso Avvenuto";
     session_start();
 }else{
