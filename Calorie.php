@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
+
+  
+
+} else {
+    header("Location:Accesso.php");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

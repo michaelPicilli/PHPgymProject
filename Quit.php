@@ -1,8 +1,17 @@
 <?php
+session_start();
 
-    session_destroy();
+foreach ($_SESSION as $key => $value) {
+
+    unset($_SESSION[$key]);
+
+}
+
+session_destroy();
+
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

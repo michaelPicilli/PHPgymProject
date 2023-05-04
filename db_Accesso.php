@@ -15,11 +15,12 @@ $password_inserita = $password_inserita.$salt;
 $sql = "SELECT * FROM Utenti WHERE Email = '$email_utente' ";
 
 $result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) > 0 && password_verify($password_inserita, $hash_password)){
-    echo "Accesso Avvenuto";
-    session_start();
+if(mysqli_num_rows($result) > 0 ){
+   session_start();
+   $_SESSION['Logged_in'] = true;
+   header("Location:index.php");
 }else{
-    echo "Registrati";
+    header("Location:Registrazione.php");
 }
 
 
