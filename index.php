@@ -69,11 +69,9 @@
     </head>
 
     <body class="homeBackground">
-        <h1 class="appName">TRAINING ME</h1>
         
-        <fieldset>
-            
-        </fieldset>
+        <h1 class="appName">TRAINING ME</h1>
+               
         
         <div class="slideshow-container magliette">
 
