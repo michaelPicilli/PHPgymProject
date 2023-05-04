@@ -72,21 +72,21 @@
         <h1 class="appName">TRAINING ME</h1>
         
         <fieldset>
-            <legend>ciao</legend>
+            
         </fieldset>
         
-        <div class="slideshow-container">
+        <div class="slideshow-container magliette">
 
             <div class="mySlides fade">
-                <img src="maglietta.png" style="width:100%">
+                <img src="MagliettaNera.png">
             </div>
 
             <div class="mySlides fade">
-                <img src="maglietta.png" style="width:100%">
+                <img src="MagliettaVerde.png" >
             </div>
 
             <div class="mySlides fade">
-                <img src="maglietta.png" style="width:100%">
+                <img src="MagliettaRossa.png" >
             </div>
 
             
