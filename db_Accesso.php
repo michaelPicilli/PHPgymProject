@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost','c26giambanco','xv3!3wHV','c26Training_Me');
+$conn = mysqli_connect('localhost', 'c26giambanco', 'xv3!3wHV', 'c26Training_Me');
 if (!$conn) {
     die("Connessione fallita: " . mysqli_connect_error());
 }
@@ -8,18 +8,42 @@ if (!$conn) {
 $email_utente = mysqli_real_escape_string($conn, $_POST["email_utente"]);
 $password_inserita = mysqli_real_escape_string($conn, $_POST["password_utente"]);
 
-$salt = bin2hex(random_bytes(32));
-$password_inserita = $password_inserita.$salt;
 
 
-$sql = "SELECT * FROM Utenti WHERE Email = '$email_utente' ";
+
+$sql = "SELECT * FROM Utenti WHERE Email = '$email_utente' AND Password = '$password_inserita'";
 
 $result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) > 0 ){
-   session_start();
-   $_SESSION['Logged_in'] = true;
-   header("Location:index.php");
-}else{
+
+if (mysqli_num_rows($result) > 0) {
+
+    $row = mysqli_fetch_assoc($result);
+    if (password_verify($password_inserita, $row['Password'])) {
+        session_start();
+        $_SESSION['Logged_in'] = true;
+        header("Location:index.php");
+    }
+
+
+
+
+} else {
+    header("Location:Registrazione.php");
+
+}
+
+
+
+
+
+
+
+
+if (mysqli_num_rows($result) > 0 && password_verify($password_inserita, )) {
+    session_start();
+    $_SESSION['Logged_in'] = true;
+    header("Location:index.php");
+} else {
     header("Location:Registrazione.php");
 }
 
