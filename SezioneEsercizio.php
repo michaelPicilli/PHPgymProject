@@ -18,8 +18,8 @@
                 echo(
                     "<h2>$filtri[$i]</h2>
                     <div class='contenuto'>
-                    <ul>
-                        <li>
+                    <ul class='ulEsercizi'>
+                        <li class'liEsercizi'>
                             <a href='Esercizio.php?titolo=!!!!&link=!!!!' class='h3'> 
                                 //QUI NOME ESERCIZIO
                             </a> 

@@ -34,11 +34,11 @@ select, option {
     width: 30em;
 }
 
-ul {
+.ulEsercizi{
     padding-bottom: 20px;
 }
 
-li {
+.liEsercizi {
     padding-bottom: 5px;
 }
 
@@ -54,4 +54,20 @@ ul .dettagli {
 .filtro {
     margin-bottom: 40px;
     margin-left: 37%;
+}
+
+.appName{
+    text-align: center;
+    color: white;
+}
+
+.homeBackground{
+    background-image: url("./background-home.jpg");
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+fieldset{
+    color: white;
 }
