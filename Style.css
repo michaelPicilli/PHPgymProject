@@ -56,9 +56,10 @@ ul .dettagli {
     margin-left: 37%;
 }
 
-.appName{
+.appName {
     text-align: center;
     color: white;
+    padding-top: 30px;
 }
 
 .homeBackground {
