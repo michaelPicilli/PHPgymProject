@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'c26giambanco', 'xv3!3wHV', 'c26Training_Me');
+$conn = mysqli_connect('localhost','c26giambanco','zk!QyT49','c26Training_Me');
 if (!$conn) {
     die("Connessione fallita: " . mysqli_connect_error());
 }
