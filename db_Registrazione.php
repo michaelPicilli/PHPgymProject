@@ -26,7 +26,7 @@ $sql = "INSERT INTO Utenti (Nome,Cognome,Email,Password,Altezza,Peso) VALUES ('$
 $result = mysqli_query($conn, $sql);
 
 if($result){
-    echo "Registrazione avvenuta con successo";
+    header("Location:index.php");
     session_start();
 }else{
     echo "Registrazione fallita";

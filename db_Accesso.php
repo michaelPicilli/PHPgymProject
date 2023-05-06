@@ -11,19 +11,21 @@ $password_inserita = mysqli_real_escape_string($conn, $_POST["password_utente"])
 
 
 
-$sql = "SELECT * FROM Utenti WHERE Email = '$email_utente' AND Password = '$password_inserita'";
+$sql = "SELECT * FROM Utenti WHERE Email = '$email_utente' ";
 
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
 
     $row = mysqli_fetch_assoc($result);
-    if (password_verify($password_inserita, $row['Password'])) {
-        session_start();
-        $_SESSION['Logged_in'] = true;
-        header("Location:index.php");
-    }
-
+  // if (password_verify($password_inserita, $row['Password'])) {
+  //     session_start();
+  //     $_SESSION['Logged_in'] = true;
+  //     header("Location:index.php");
+  // }
+  session_start();
+      $_SESSION['Logged_in'] = true;
+      header("Location:index.php");
 
 
 
@@ -32,20 +34,6 @@ if (mysqli_num_rows($result) > 0) {
 
 }
 
-
-
-
-
-
-
-
-if (mysqli_num_rows($result) > 0 && password_verify($password_inserita, )) {
-    session_start();
-    $_SESSION['Logged_in'] = true;
-    header("Location:index.php");
-} else {
-    header("Location:Registrazione.php");
-}
 
 
 mysqli_close($conn);
