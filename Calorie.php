@@ -42,9 +42,9 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 </head>
 
 <body>
-    <div class="border border-danger border-3 rounded-4">
-        <h2 class="mt-2">Guarda il tuo fabbisogno giornaliero</h2>
-        <div class="container">
+    <div class="border m-3 border-secondary border-3 rounded-4">
+        <h2 class="mt-2 mb-3">Guarda il tuo fabbisogno giornaliero</h2>
+        <div class="container mt-4">
             <div class="row">
                 <div class="col">
                     <table class="table">
