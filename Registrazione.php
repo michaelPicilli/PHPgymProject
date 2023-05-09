@@ -73,7 +73,7 @@
                                                 id="numero_allenamenti" min="1" max="7" required>
                                         </div>
                                         
-                                        <button type="submit" class="btn btn-secondary">Login</button>
+                                        <button type="submit" class="btn btn-secondary">Registrati</button>
                                         
 
                                     </form>
