@@ -25,10 +25,12 @@ if (mysqli_num_rows($result) > 0) {
   // }
   session_start();
       $_SESSION['Logged_in'] = true;
+      $_SESSION['email'] = $row['Email'] ;
+      $_SESSION['peso'] = $row['Peso'];
+      $_SESSION['altezza'] = $row['Altezza'];
+
       header("Location:index.php");
-
-
-
+      
 } else {
     header("Location:Registrazione.php");
 

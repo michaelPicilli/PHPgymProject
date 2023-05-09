@@ -3,12 +3,20 @@ session_start();
 
 if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
-  
+ 
+    $numero_calorie = $_SESSION['peso'] * 24;
+    $numero_calorie = ($numero_calorie * 1.5);
 
+    $bulk = $numero_calorie + 500;
+    $cut = $numero_calorie - 500;
 } else {
     header("Location:Accesso.php");
 
 }
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,18 +43,34 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
 <body>
     <div class="border border-danger border-3 rounded-4">
-        <h2 class="mt-2">Calcola il tuo Fabbisogno giornaliero</h2>
+        <h2 class="mt-2">Guarda il tuo fabbisogno giornaliero</h2>
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form action="">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Peso</th>
+                                <th>Altezza</th>
+                                <th>Bulk</th>
+                                <th>Cut</th>
+                                <th>Carboidrati</th>
+                                <th>Proteine</th>
+                                <th>Grassi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td><?php echo $_SESSION['peso'];?></td>
+                                <td><?php echo $_SESSION['altezza'];?></td>
+                                <td><?php echo $bulk;?></td>
+                                <td><?php echo $cut;?></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-
-
-
-                        <input type="submit" value="Calcola" class="btn btn-secondary">
-                    </form>
                 </div>
+
                 <div class="col">
 
                 </div>
