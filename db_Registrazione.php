@@ -11,6 +11,8 @@ $altezza_utente = mysqli_real_escape_string($conn, $_POST["altezza_utente"]);
 $peso_utente = mysqli_real_escape_string($conn, $_POST["peso_utente"]);
 $cognome_utente = mysqli_real_escape_string($conn, $_POST["cognome_utente"]);
 $email_utente = mysqli_real_escape_string($conn, $_POST["email_utente"]);
+$numero_allenamenti = mysqli_real_escape_string($conn, $_POST["numero_allenamenti"]);
+$sesso_utente = mysqli_real_escape_string($conn, $_POST["sesso_utente"]);
  //fare in modo che venga scritto nella password della form  
 if (strlen($password_inserita) < 8) {
     die("La password deve contenere almeno 8 caratteri");
@@ -21,7 +23,7 @@ if (strlen($password_inserita) < 8) {
 //$password_inserita = $password_inserita.$salt;
 $hash_password = password_hash($password_inserita, PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO Utenti (Nome,Cognome,Email,Password,Altezza,Peso) VALUES ('$nome_inserito','$cognome_utente','$email_utente','$hash_password','$altezza_utente','$peso_utente')";
+$sql = "INSERT INTO Utenti (Nome,Cognome,Email,Password,Altezza,Peso,allenamenti,Sesso) VALUES ('$nome_inserito','$cognome_utente','$email_utente','$hash_password','$altezza_utente','$peso_utente','$numero_allenamenti','$sesso_utente')";
 
 $result = mysqli_query($conn, $sql);
 

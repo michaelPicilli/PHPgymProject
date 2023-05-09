@@ -41,6 +41,14 @@
                                             <input type="text" class="form-control" id="cognome_utente" name="cognome_utente" required>
                                         </div>
                                         <div>
+                                            <label for="sesso_utente">Sesso</label>
+                                            <select class="form-control" name="sesso_utente" id="sesso_utente"   required>
+                                                <option value="M">Maschio</option>
+                                                <option value="F">Femmina</option>
+                                                <option value="A">Altro</option>
+                                            </select>
+                                        </div>
+                                        <div>
                                             <label for="email_utente">Email Utente</label>
                                             <input type="email" class="form-control" id="email_utente" name="email_utente" required>
                                         </div>
@@ -54,11 +62,17 @@
                                             <input type="number" class="form-control" name="peso_utente"
                                                 id="peso_utente" placeholder="Kg" required>
                                         </div>
-                                        <div class="mb-5">
+                                        <div >
                                             <label for="altezza_utente">Altezza</label>
                                             <input type="number" class="form-control" name="altezza_utente"
                                                 id="altezza_utente" placeholder="cm" required>
                                         </div>
+                                        <div class="mb-5">
+                                            <label for="numero_allenamenti">Numero Allenamenti</label>
+                                            <input type="number" class="form-control" name="numero_allenamenti"
+                                                id="numero_allenamenti" min="1" max="7" required>
+                                        </div>
+                                        
                                         <button type="submit" class="btn btn-secondary">Login</button>
                                         
 
