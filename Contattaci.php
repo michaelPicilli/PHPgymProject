@@ -1,16 +1,10 @@
 <?php
 session_start();
 
-if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
-
-} else {
-    header("Location:Accesso.php");
-
-}
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -56,7 +50,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
                 </div>
 
                 <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
-                    <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                    <form action="db_contatti_page.php" class="contact-form form-validate" novalidate="novalidate" method="post">
                         <div class="row">
                             <div class="col-sm-6 mb-3">
                                 <div class="form-group">
@@ -85,7 +79,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
                             <div class="col-sm-6 mb-3">
                                 <div class="form-group">
                                     <label for="phone">Numero di Telefono</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                    <input type="text" class="form-control" id="phone" name="phone"
                                         placeholder="+39 386 276 3562">
                                 </div>
                             </div>
