@@ -42,29 +42,31 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 </head>
 
 <body>
-    <div class="border m-3 border-secondary border-3 rounded-4">
+    <div class="border m-3 border-secondary border-3 rounded-4" style=" min-width: 508px;">
         <h2 class="mt-2 mb-3">Guarda il tuo fabbisogno giornaliero</h2>
         <div class="container mt-4">
             <div class="row">
                 <div class="col">
                     <table class="table">
                         <thead>
-                            <tr>
+                            <tr class="m-2">
                                 <th>Peso</th>
                                 <th>Altezza</th>
                                 <th>Bulk</th>
                                 <th>Cut</th>
                                 <th>Carboidrati</th>
                                 <th>Proteine</th>
-                                <th>Grassi</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            <tr>
+                            <tr class="m-2">
                                 <td><?php echo $_SESSION['peso'];?></td>
                                 <td><?php echo $_SESSION['altezza'];?></td>
                                 <td><?php echo $bulk;?></td>
                                 <td><?php echo $cut;?></td>
+                                <td><?php echo $_SESSION['peso'] * 7?></td>
+                                <td><?php echo $_SESSION['peso'] * 1.8?></td>
+
                             </tr>
                         </tbody>
                     </table>

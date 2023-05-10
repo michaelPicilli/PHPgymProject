@@ -71,6 +71,7 @@
                         required>
                 </div>
                 <button type="submit" class="btn btn-secondary">Aggiorna</button>
+                <input type="button" value="Elimina account" class="btn btn-danger">
             </form>
         </div>
     </div>
