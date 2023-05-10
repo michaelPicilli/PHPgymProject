@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
+
+} else {
+    header("Location:Accesso.php");
+
+}
+
+
+
+
+?>
 <html lang="en">
 
 <head>
@@ -43,7 +56,7 @@
 
             <h3>Personal info</h3>
 
-            <form class="form-horizontal" method="post" action="upload_data.php">
+            <form class="form-horizontal" method="post" action="aggiornamento_profilo.php">
                 <div>
                     <label for="nome_utente">Nome Utente</label>
                     <input type="text" class="form-control" id="nome_utente" name="nome_utente" required>
@@ -71,7 +84,7 @@
                         required>
                 </div>
                 <button type="submit" class="btn btn-secondary">Aggiorna</button>
-                <input type="button" value="Elimina account" class="btn btn-danger">
+                <a href="delete_profile.php" class="btn btn-danger">Elimina Profilo</a>
             </form>
         </div>
     </div>

@@ -3,7 +3,6 @@ session_start();
 
 if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
- 
     $numero_calorie = $_SESSION['peso'] * 24;
     $numero_calorie = ($numero_calorie * 1.5);
 
