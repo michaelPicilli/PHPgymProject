@@ -74,7 +74,16 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
                 </div>
 
                 <div class="col">
-
+                    <section>
+                        <h3>Consigli</h3>
+                        <ul>
+                            <li>Per aumentare di peso, devi mangiare di più di quello che consumi.</li>
+                            <li>Per perdere peso, devi mangiare meno di quello che consumi.</li>
+                            <li>Per mantenere il peso, devi mangiare la stessa quantità di calorie che consumi.</li>
+                        </ul>
+                    </section>
+                        
+                    
                 </div>
 
             </div>
