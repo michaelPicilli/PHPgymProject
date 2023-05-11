@@ -1,13 +1,14 @@
 <?php
     class SezioneEsercizio {
         private $titolo;
-        private $dettagli;
-        private $linkVideo;
+        public $focusArea;
+        public $linkVideo;
 
-        function __construct($titolo, $dettagli, $linkVideo){
+        function __construct($titolo, $focusArea, $linkVideo){
             $this->titolo = $titolo;
-            $this->dettagli = $dettagli;
+            $this->focusArea = $focusArea;
             $this->linkVideo = $linkVideo;
+
         }
 
         function mostraHTML($filtri){
@@ -15,12 +16,13 @@
 
             while(isset($filtri[$i]))       //TODO: RIVEDERE + QUERY
             {
+                var_dump($this->linkVideo);
                 echo(
                     "<h2>$filtri[$i]</h2>
                     <div class='contenuto'>
                     <ul class='ulEsercizi'>
                         <li class'liEsercizi'>
-                            <a href='Esercizio.php?titolo=!!!!&link=!!!!' class='h3'> 
+                            <a href='Esercizio.php?titolo=!!!!&link= class='h3'> 
                                 //QUI NOME ESERCIZIO
                             </a> 
                         </li>
@@ -28,8 +30,7 @@
                         <details>
                             <summary>Anteprima video</summary>
                             <p class='dettagli'>
-                                <iframe width='560' height='315' src='' title='' frameborder='0'
-                                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                               <img src='$this->linkVideo' alt='ciao' height=400 width=400>
                             </p>
                         </details>
                     </ul>"

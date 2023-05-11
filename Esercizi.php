@@ -15,9 +15,9 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        
-    } 
+
+
+    }
 
 
 
@@ -28,9 +28,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
     header("Location:Accesso.php");
 
 }
-if (isset($_POST['filtroEsercizio'])) {
-    $filtri = $_POST['filtroEsercizio'];
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -74,8 +72,26 @@ if (isset($_POST['filtroEsercizio'])) {
 
     <div>
         <?php
-        require("SezioneEsercizio.php");
-        $temp = new SezioneEsercizio("TITOLO", "DESCRIZIONE", "LINK"); //TODO: Cambiare con query
+         require("SezioneEsercizio.php");
+        if (isset($_POST['filtroEsercizio'])) {
+            $filtri = $_POST['filtroEsercizio'];
+                   
+
+        }
+        while ($row = $result->fetch_assoc()) {
+            
+            $temp = new SezioneEsercizio($row['Nome'],$row['FocusArea'],$row['LinkVideo']); //TODO: Cambiare con query
+            
+            if (isset($filtri))
+                $temp->mostraHTML($filtri);
+
+
+
+
+
+            //echo $row['Nome'] . ":" . $row['LinkVideo'] . ":" . $row['FocusArea'] . "<br>";
+            //echo "<br>";
+        }
         
         if (isset($filtri))
             $temp->mostraHTML($filtri);
