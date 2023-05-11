@@ -6,6 +6,23 @@ session_start();
 
 if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
+    $conn = mysqli_connect('localhost', 'c26giambanco', 'zk!QyT49', 'c26Training_Me');
+    if (!$conn) {
+        die("Connessione fallita: " . mysqli_connect_error());
+    }
+    $sql = "SELECT * FROM Esercizi ";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        
+    } 
+
+
+
+    mysqli_close($conn);
+
 
 } else {
     header("Location:Accesso.php");
