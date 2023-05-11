@@ -18,18 +18,20 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
 
     $row = mysqli_fetch_assoc($result);
-  // if (password_verify($password_inserita, $row['Password'])) {
-  //     session_start();
-  //     $_SESSION['Logged_in'] = true;
-  //     header("Location:index.php");
-  // }
-  session_start();
+    if(password_verify($password_inserita,$row['Password']))
+    {
+        session_start();
       $_SESSION['Logged_in'] = true;
       $_SESSION['email'] = $row['Email'] ;
       $_SESSION['peso'] = $row['Peso'];
       $_SESSION['altezza'] = $row['Altezza'];
 
       header("Location:index.php");
+    }
+    else
+    {
+        echo "Password errata";
+    }
       
 } else {
     header("Location:Registrazione.php");
