@@ -47,7 +47,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
     <script src="Filtro.js"></script>
     <link rel="stylesheet" href="Style.css">
     <?php
-    include 'navbar.html';
+        include 'navbar.html';
     ?>
     <title>ESERCIZI</title>
 </head>
@@ -75,14 +75,13 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
     <div>
         <?php
-         require("SezioneEsercizio.php");
+        require("SezioneEsercizio.php");
+
         if (isset($_POST['filtroEsercizio'])) {
             $filtri = $_POST['filtroEsercizio'];
         }
         while ($row = $result->fetch_assoc()) {
-            
-            $temp = new SezioneEsercizio($row['Nome'],$row['FocusArea'],$row['LinkVideo']); //TODO: Cambiare con query
-          
+            $temp = new SezioneEsercizio($row['Nome'], $row['LinkVideo'], $row['FocusArea']); //TODO: Cambiare con query
         }
         
         if (isset($filtri))
@@ -93,7 +92,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
 <footer>
     <?php
-    include 'footer.html';
+        include 'footer.html';
     ?>
 </footer>
 
