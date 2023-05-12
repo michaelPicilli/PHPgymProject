@@ -36,6 +36,9 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
         h2 {
             text-align: center;
         }
+        li{
+            margin : 5px
+        }
     </style>
 
 </head>
@@ -70,15 +73,28 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
                         </tbody>
                     </table>
 
+                    <section>
+                        <h4>Unità di misura</h4>
+                        <ul>
+                            <li>Peso : Kg</li>
+                            <li>Altezza : Cm</li>
+                            <li>Bulk : Calorie</li>
+                            <li>Cut : Calorie</li>
+                            <li>Carboidrati : Grammi</li>
+                            <li>Proteine : Grammi</li>
+                        </ul>
+                    </section>
+
                 </div>
 
                 <div class="col">
                     <section>
                         <h3>Consigli</h3>
                         <ul>
-                            <li>Per aumentare di peso, devi mangiare di più di quello che consumi.</li>
-                            <li>Per perdere peso, devi mangiare meno di quello che consumi.</li>
-                            <li>Per mantenere il peso, devi mangiare la stessa quantità di calorie che consumi.</li>
+
+                            <li>[Fase di Massa] - Per aumentare di peso, devi mangiare di più di quello che consumi</li><hr>
+                            <li>[Fase di definizione] - Per perdere peso, devi mangiare meno di quello che consumi. Mantenendo lo stesso livello proteico</li><hr>
+                            <li>[Integrazione] - Creatina,Proteine in Polvere,Aminoacidi</li>
                         </ul>
                     </section>
                         

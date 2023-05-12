@@ -10,7 +10,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
     if (!$conn) {
         die("Connessione fallita: " . mysqli_connect_error());
     }
-    $sql = "SELECT * FROM Esercizi WHERE FocusArea =";
+    $sql = "SELECT * FROM Esercizi ";
 
     $result = mysqli_query($conn, $sql);
 
