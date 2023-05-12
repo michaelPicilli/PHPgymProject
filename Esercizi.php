@@ -10,7 +10,7 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
     if (!$conn) {
         die("Connessione fallita: " . mysqli_connect_error());
     }
-    $sql = "SELECT * FROM Esercizi ";
+    $sql = "SELECT * FROM Esercizi WHERE FocusArea =";
 
     $result = mysqli_query($conn, $sql);
 
@@ -26,8 +26,11 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
 } else {
     header("Location:Accesso.php");
-
 }
+
+
+
+
 
 ?>
 
@@ -75,22 +78,11 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
          require("SezioneEsercizio.php");
         if (isset($_POST['filtroEsercizio'])) {
             $filtri = $_POST['filtroEsercizio'];
-                   
-
         }
         while ($row = $result->fetch_assoc()) {
             
             $temp = new SezioneEsercizio($row['Nome'],$row['FocusArea'],$row['LinkVideo']); //TODO: Cambiare con query
-            
-            if (isset($filtri))
-                $temp->mostraHTML($filtri);
-
-
-
-
-
-            //echo $row['Nome'] . ":" . $row['LinkVideo'] . ":" . $row['FocusArea'] . "<br>";
-            //echo "<br>";
+          
         }
         
         if (isset($filtri))
