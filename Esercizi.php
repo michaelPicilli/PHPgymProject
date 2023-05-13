@@ -1,37 +1,21 @@
-<!-- TODO: Fare pagina "schede" -->
-<!-- TODO: Mettere in tutte le pagine il logo della tab -->
-
 <?php
-session_start();
+    session_start();
 
-if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
+    if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
-    $conn = mysqli_connect('localhost', 'c26giambanco', 'zk!QyT49', 'c26Training_Me');
-    if (!$conn) {
-        die("Connessione fallita: " . mysqli_connect_error());
+        $conn = mysqli_connect('localhost', 'c26giambanco', 'zk!QyT49', 'c26Training_Me');
+        if (!$conn) {
+            die("Connessione fallita: " . mysqli_connect_error());
+        }
+        $sql = "SELECT * FROM Esercizi";
+
+        $result = mysqli_query($conn, $sql);
+
+        mysqli_close($conn);
+
+    } else {
+        header("Location:Accesso.php");
     }
-    $sql = "SELECT * FROM Esercizi ";
-
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-
-
-    }
-
-
-
-    mysqli_close($conn);
-
-
-} else {
-    header("Location:Accesso.php");
-}
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -75,17 +59,63 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
 
     <div>
         <?php
-        require("SezioneEsercizio.php");
+            require("Esercizio.php");
 
-        if (isset($_POST['filtroEsercizio'])) {
-            $filtri = $_POST['filtroEsercizio'];
-        }
-        while ($row = $result->fetch_assoc()) {
-            $temp = new SezioneEsercizio($row['Nome'], $row['LinkVideo'], $row['FocusArea']); //TODO: Cambiare con query
-        }
-        
-        if (isset($filtri))
-            $temp->mostraHTML($filtri);
+            $esercizi = array();
+            $cntFiltro=0;
+            $cntEsercizi=0;
+
+            if(isset($_POST['filtroEsercizio']))
+                $filtri = $_POST['filtroEsercizio'];
+
+            while($row = $result->fetch_assoc()) {
+                $esercizi[$cntEsercizi] = new Esercizio($row['Nome'], $row['LinkVideo'], $row['FocusArea']); //TODO: Cambiare con query
+                $cntEsercizi++;
+            }
+
+            if(isset($filtri))
+            {
+                count($filtri)-1 === 0 ? $counter=$cntFiltro<count($filtri): $counter = $cntFiltro<count($filtri)-1;
+
+                for($cntFiltro=0; $cntFiltro<$counter; $cntFiltro++)
+                {
+                    for($cntEsercizi=0; $cntEsercizi<count($esercizi); $cntEsercizi++)
+                    {
+                        if(isset($esercizi[$cntEsercizi]))
+                        {
+                            $nome=$esercizi[$cntEsercizi]->nome;
+                            $link=$esercizi[$cntEsercizi]->linkVideo;
+                            $focusArea=$esercizi[$cntEsercizi]->focusArea;
+
+                            if(in_array($focusArea, $filtri))
+                            {
+                                $index = array_search($focusArea, $filtri);
+
+                                echo(
+                                    "<h2>$filtri[$index]</h2>
+                                    <div class='contenuto'>
+                                    <ul class='ulEsercizi'>
+                                        <li class'liEsercizi'>
+                                            <h3 style='color: blue; margin-top: 0px; margin-left: -5px; margin-bottom: -5px'> 
+                                                $nome
+                                            </h3> 
+                                        </li>
+                                
+                                        <details>
+                                            <summary>Anteprima video</summary>
+                                            <p class='dettagli'>
+                                                <img src='$link' alt='Video dimistrazione \"$nome\"' height=400 width=400>
+                                            </p>
+                                        </details>
+                                    </ul>"
+                                );
+                            }
+                            // else
+                            //  echo("<h3>OPS! Non sono stati trovati esercizi di quella zona di allenamento. SORRY :(</h3>");     //TODO: RIVEDERE
+                        }
+                    }
+                }
+            }
         ?>
     </div>
 </body>

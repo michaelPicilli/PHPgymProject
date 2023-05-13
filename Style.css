@@ -11,13 +11,12 @@ h2 {
     margin-left: 5px;
 }
 
-li .h3 {
+li h3 {
     color: blue;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 25px;
-    padding-left: 10px;
-    margin-top: -20px;
+    
 }
 
 .content, p ol {
