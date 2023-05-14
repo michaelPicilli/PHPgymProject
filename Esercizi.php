@@ -7,7 +7,7 @@
         if (!$conn) {
             die("Connessione fallita: " . mysqli_connect_error());
         }
-        $sql = "SELECT * FROM Esercizi";
+        $sql = "SELECT * FROM `Esercizi` ORDER BY FocusArea;";
 
         $result = mysqli_query($conn, $sql);
 
@@ -29,7 +29,9 @@
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
     <script src="Filtro.js"></script>
+
     <link rel="stylesheet" href="Style.css">
+
     <?php
         include 'navbar.html';
     ?>
@@ -39,7 +41,7 @@
 
 <body>
     <h1>ESERCIZI</h1>
-    <label class="labelFiltro">Scegli la zona da allenare:</label>
+    <label class="labelFiltro" for="formFiltro">Scegli la zona da allenare:</label>
 
     <form method="post" id="formFiltro" class="filtro">
         <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true">
@@ -69,7 +71,7 @@
                 $filtri = $_POST['filtroEsercizio'];
 
             while($row = $result->fetch_assoc()) {
-                $esercizi[$cntEsercizi] = new Esercizio($row['Nome'], $row['LinkVideo'], $row['FocusArea']); //TODO: Cambiare con query
+                $esercizi[$cntEsercizi] = new Esercizio($row['Nome'], $row['LinkVideo'], $row['FocusArea']);
                 $cntEsercizi++;
             }
 
@@ -89,19 +91,19 @@
 
                             if(in_array($focusArea, $filtri))
                             {
-                                $index = array_search($focusArea, $filtri);
+                                $indexFiltro = array_search($focusArea, $filtri);
 
                                 echo(
-                                    "<h2>$filtri[$index]</h2>
+                                    "<h2 style='margin-top: 20px; text-transform: uppercase; color: blue'>$filtri[$indexFiltro]</h2>
                                     <div class='contenuto'>
                                     <ul class='ulEsercizi'>
                                         <li class'liEsercizi'>
-                                            <h3 style='color: blue; margin-top: 0px; margin-left: -5px; margin-bottom: -5px'> 
+                                            <h3 style='color: black; text-transform: none'> 
                                                 $nome
                                             </h3> 
                                         </li>
                                 
-                                        <details>
+                                        <details style='margin-left: 10px; margin-top: -10px'>
                                             <summary>Anteprima video</summary>
                                             <p class='dettagli'>
                                                 <img src='$link' alt='Video dimistrazione \"$nome\"' height=400 width=400>
@@ -110,12 +112,12 @@
                                     </ul>"
                                 );
                             }
-                            // else
-                            //  echo("<h3>OPS! Non sono stati trovati esercizi di quella zona di allenamento. SORRY :(</h3>");     //TODO: RIVEDERE
                         }
                     }
                 }
-            }
+            } 
+            else
+                echo("<div style='height: 295px;'> </div>")
         ?>
     </div>
 </body>
