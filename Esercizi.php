@@ -111,25 +111,6 @@
 
                                     <hr/>"
                                 );
-
-                                /*
-                                <h2 style='margin-top: 20px; text-transform: uppercase; color: blue'>$filtri[$indexFiltro]</h2>
-                                    <div class='contenuto'>
-                                    <ul class='ulEsercizi'>
-                                        <li class'liEsercizi'>
-                                            <h3 style='color: black; text-transform: none'> 
-                                                $nome
-                                            </h3>
-                                        </li>
-                                
-                                        <details style='margin-left: 10px; margin-top: -10px'>
-                                            <summary>Anteprima video</summary>
-                                            <p class='dettagli'>
-                                                <img src='$link' alt='Video dimistrazione \"$nome\"' height=400 width=400>
-                                            </p>
-                                        </details>
-                                    </ul>
-                                */
                             }
                         }
                     }
