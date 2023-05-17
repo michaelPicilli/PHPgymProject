@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+    width: 100%;
     margin-bottom: 300px;
 }
 
@@ -12,7 +13,6 @@ h2 {
 }
 
 .content, p ol {
-    /* color: red; */
     font-size: 20px;
     padding-left: 20px;
     margin-top: -20px;
@@ -31,7 +31,8 @@ ul .dettagli {
 
 .labelFiltro {
     margin-top: 20px;
-    margin-left: 45%;
+    text-align: center;
+    width: 100%;
 }
 
 .appName {
@@ -47,9 +48,6 @@ ul .dettagli {
     background-size: cover;
 }
 
-fieldset {
-    color: white;
-}
 .magliette{
     text-align: center;
     padding-top: 100px;

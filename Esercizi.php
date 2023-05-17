@@ -38,26 +38,27 @@
     <title>ESERCIZI</title>
 </head>
 
-
 <body>
     <h1>ESERCIZI</h1>
-    <label class="labelFiltro" for="formFiltro">Scegli la zona da allenare:</label>
+    <label for="formFiltro" style="margin-top: 20px; text-align: center; width: 100%;">Scegli la zona da allenare:</label>
 
-    <form method="post" id="formFiltro" class="filtro">
-        <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true">
-            <option value="Petto">PETTO</option>
-            <option value="Spalle">SPALLE</option>
-            <option value="Braccia">BRACCIA</option>
-            <option value="Schiena">SCHIENA</option>
-            <option value="Addominali">ADDOMINALI</option>
-            <option value="Gambe">GAMBE</option>
-            <option value="Glutei">GLUTEI</option>
-            <option value="Full body">FULL BODY</option>
-            <option value="Olympic">OLYMPIC</option>
-        </select>
+    <div style="display:flex; justify-content:center; align-items:center;">
+        <form method="post" id="formFiltro" style="margin-top: 20px;">
+            <select name="filtroEsercizio[]" id="filtroEsercizio" multiple multiselect-search="true">
+                <option value="Petto">PETTO</option>
+                <option value="Spalle">SPALLE</option>
+                <option value="Braccia">BRACCIA</option>
+                <option value="Schiena">SCHIENA</option>
+                <option value="Addominali">ADDOMINALI</option>
+                <option value="Gambe">GAMBE</option>
+                <option value="Glutei">GLUTEI</option>
+                <option value="Full body">FULL BODY</option>
+                <option value="Olympic">OLYMPIC</option>
+            </select>
 
-        <input type="submit" value="INVIA" class="btn btn-secondary">
-    </form>
+            <input type="submit" value="INVIA" class="btn btn-secondary">
+        </form>
+    </div>
 
     <div>
         <?php
@@ -100,7 +101,7 @@
                                         <li class'liEsercizi'>
                                             <h3 style='color: black; text-transform: none'> 
                                                 $nome
-                                            </h3> 
+                                            </h3>
                                         </li>
                                 
                                         <details style='margin-left: 10px; margin-top: -10px'>
