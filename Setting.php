@@ -75,12 +75,12 @@ if (isset($_SESSION['Logged_in']) && $_SESSION['Logged_in'] === true) {
                 </div>
                 <div>
                     <label for="peso_utente">Peso Corporeo</label>
-                    <input type="number" class="form-control" name="peso_utente" id="peso_utente" placeholder="Kg" min="40" max="200"
+                    <input type="number" class="form-control" name="peso_utente" id="peso_utente" placeholder="Kg"
                         required>
                 </div>
                 <div class="mb-3">
                     <label for="altezza_utente">Altezza</label>
-                    <input type="number" class="form-control" name="altezza_utente" id="altezza_utente" placeholder="cm" min="140" max="300"
+                    <input type="number" class="form-control" name="altezza_utente" id="altezza_utente" placeholder="cm"
                         required>
                 </div>
                 <button type="submit" class="btn btn-secondary">Aggiorna</button>

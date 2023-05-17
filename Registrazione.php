@@ -42,7 +42,7 @@
                                         </div>
                                         <div>
                                             <label for="sesso_utente">Sesso</label>
-                                            <select class="form-control" name="sesso_utente" id="sesso_utente" required>
+                                            <select class="form-control" name="sesso_utente" id="sesso_utente"   required>
                                                 <option value="M">Maschio</option>
                                                 <option value="F">Femmina</option>
                                                 <option value="A">Altro</option>
@@ -60,12 +60,12 @@
                                         <div>
                                             <label for="peso_utente">Peso Corporeo</label>
                                             <input type="number" class="form-control" name="peso_utente"
-                                                id="peso_utente" placeholder="Kg" min="40" max="200" required>
+                                                id="peso_utente" placeholder="Kg" required>
                                         </div>
                                         <div >
                                             <label for="altezza_utente">Altezza</label>
                                             <input type="number" class="form-control" name="altezza_utente"
-                                                id="altezza_utente" placeholder="cm" min="140" max="300" required>
+                                                id="altezza_utente" placeholder="cm" required>
                                         </div>
                                         <div class="mb-5">
                                             <label for="numero_allenamenti">Numero Allenamenti</label>
@@ -74,6 +74,8 @@
                                         </div>
                                         
                                         <button type="submit" class="btn btn-secondary">Registrati</button>
+                                        
+
                                     </form>
 
                                 </div>

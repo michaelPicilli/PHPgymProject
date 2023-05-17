@@ -95,7 +95,25 @@
                                 $indexFiltro = array_search($focusArea, $filtri);
 
                                 echo(
-                                    "<h2 style='margin-top: 20px; text-transform: uppercase; color: blue'>$filtri[$indexFiltro]</h2>
+                                    "<h2 style='margin-top: 20px; text-transform: uppercase; text-align:center; color: blue'>$filtri[$indexFiltro]</h2>
+                                    
+                                    <div class='row'>
+                                        <div class='col-md-6'>
+                                            <h3 style='padding-left: 10px; margin-top: 20%; font-weight: bold'> 
+                                                $nome
+                                            </h3>
+                                        </div>
+
+                                        <div class='col-md-6'>
+                                            <img src='$link' alt='Video dimistrazione \"$nome\"' height=400 width=400 style='margin-left: 40%'>
+                                        </div>
+                                    </div>
+
+                                    <hr/>"
+                                );
+
+                                /*
+                                <h2 style='margin-top: 20px; text-transform: uppercase; color: blue'>$filtri[$indexFiltro]</h2>
                                     <div class='contenuto'>
                                     <ul class='ulEsercizi'>
                                         <li class'liEsercizi'>
@@ -110,8 +128,8 @@
                                                 <img src='$link' alt='Video dimistrazione \"$nome\"' height=400 width=400>
                                             </p>
                                         </details>
-                                    </ul>"
-                                );
+                                    </ul>
+                                */
                             }
                         }
                     }
